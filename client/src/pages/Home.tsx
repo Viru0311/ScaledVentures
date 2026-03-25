@@ -5,6 +5,14 @@ import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 
+import contactCenterImg from "../../../attached_assets/contact-center.png";
+import dataCompressionImg from "../../../attached_assets/data-compression.png";
+import productDevelopmentImg from "../../../attached_assets/product-development.png";
+import contactCenterPlatformImg from "../../../attached_assets/contact-center-platform.png";
+import dataCompressionPlatformImg from "../../../attached_assets/data-compression-platform.png";
+import knowledgeWorkflowImg from "../../../attached_assets/knowledge-&-workflow.png";
+import productDevelopmentPlatformImg from "../../../attached_assets/product-development-platform.png";
+
 const SERVICE_CARD_COLORS = ["#6a2de2", "#39827a", "#1f6fff", "#78afdb", "#feac00"];
 
 const VISUAL_GRADIENTS = [
@@ -21,46 +29,94 @@ function ServiceSuiteSection({
   description,
   panelTone = 0,
   reverse = false,
+  visualImageSrc,
+  visualImageAlt,
 }: {
   title: string;
   subtitle: string;
   description: string;
   panelTone?: number;
   reverse?: boolean;
+  visualImageSrc?: string;
+  visualImageAlt?: string;
 }) {
+  function TextSide({
+    title,
+    subtitle,
+    description,
+  }: {
+    title: string;
+    subtitle: string;
+    description: string;
+  }) {
+    return (
+      <div className="flex flex-col justify-center py-6 lg:py-0 lg:min-h-[360px] md:min-h-[320px] min-h-[280px]">
+        <span className="text-primary font-bold tracking-widest uppercase text-[1.05rem] mb-4 block">Product Suite</span>
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground mt-0 mb-4 leading-tight text-left -ml-[2px]">
+          {title}
+        </h2>
+        <p className="text-xl md:text-2xl font-medium text-foreground mb-6">{subtitle}</p>
+        <p className="text-base md:text-lg text-muted-foreground mb-8 leading-relaxed">{description}</p>
+        <Link href="/get-in-touch">
+          <a className="link-underline inline-flex items-center gap-1 text-primary font-semibold">
+            Learn More <span className="ml-1">-&gt;</span>
+          </a>
+        </Link>
+      </div>
+    );
+  }
+
+  function VisualSide({
+    title,
+    panelTone,
+    visualImageSrc,
+    visualImageAlt,
+  }: {
+    title: string;
+    panelTone: number;
+    visualImageSrc?: string;
+    visualImageAlt?: string;
+  }) {
+    return (
+      <div className="relative flex items-center justify-center h-[280px] md:h-[320px] lg:h-[360px]">
+        {visualImageSrc ? (
+          <img
+            src={visualImageSrc}
+            alt={visualImageAlt ?? title}
+            className="w-full h-full object-contain object-center"
+            loading="lazy"
+          />
+        ) : (
+          <div
+            className="absolute inset-0"
+            style={{ background: VISUAL_GRADIENTS[panelTone % VISUAL_GRADIENTS.length] }}
+          />
+        )}
+
+        <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
+
+        {!visualImageSrc ? (
+          <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_top_right,_rgba(255,255,255,0.35),_transparent_55%)]" />
+        ) : null}
+      </div>
+    );
+  }
+
   return (
     <section className="py-14 md:py-20 bg-background">
       <div className="container mx-auto px-4 md:px-6">
-        <div
-          className={`grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch ${
-            reverse ? "lg:[&>*:first-child]:order-2" : ""
-          }`}
-        >
-          <div className="rounded-2xl border border-border/60 bg-card/40 p-8 md:p-10 lg:min-h-[420px] flex flex-col justify-center">
-            <span className="text-primary font-bold tracking-widest uppercase text-[1.05rem] mb-4 block">
-              Product Suite
-            </span>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground mt-0 mb-4 leading-tight text-left -ml-[2px]">
-              {title}
-            </h2>
-            <p className="text-xl md:text-2xl font-medium text-foreground mb-6">{subtitle}</p>
-            <p className="text-base md:text-lg text-muted-foreground mb-8 leading-relaxed">{description}</p>
-            <Link href="/get-in-touch">
-              <a className="link-underline inline-flex items-center gap-1 text-primary font-semibold">
-                Learn More <span className="ml-1">-&gt;</span>
-              </a>
-            </Link>
-          </div>
-          <div
-            className="relative rounded-2xl overflow-hidden shadow-lg shadow-primary/20 border border-white/10 lg:min-h-[420px] p-8 md:p-10 flex flex-col justify-end"
-            style={{ background: VISUAL_GRADIENTS[panelTone % VISUAL_GRADIENTS.length] }}
-          >
-            <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_top_right,_rgba(255,255,255,0.35),_transparent_55%)]" />
-            <div className="relative z-10">
-              <p className="text-white/80 text-sm uppercase tracking-[0.18em] mb-2">Scaled Ventures</p>
-              <p className="text-white text-2xl md:text-3xl font-heading font-bold leading-tight">{title}</p>
-            </div>
-          </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
+          {reverse ? (
+            <>
+              <VisualSide title={title} panelTone={panelTone} visualImageSrc={visualImageSrc} visualImageAlt={visualImageAlt} />
+              <TextSide title={title} subtitle={subtitle} description={description} />
+            </>
+          ) : (
+            <>
+              <TextSide title={title} subtitle={subtitle} description={description} />
+              <VisualSide title={title} panelTone={panelTone} visualImageSrc={visualImageSrc} visualImageAlt={visualImageAlt} />
+            </>
+          )}
         </div>
       </div>
     </section>
@@ -69,10 +125,10 @@ function ServiceSuiteSection({
 
 function SeeTheResultsCarousel() {
   const slides = [
-    { label: "Contact Center Platform", tone: 0 },
-    { label: "Data Compression Platform", tone: 1 },
-    { label: "Knowledge & Workflow AI", tone: 2 },
-    { label: "Product Development Platform", tone: 4 },
+    { label: "Contact Center Platform", imageSrc: contactCenterPlatformImg, tone: 0 },
+    { label: "Data Compression Platform", imageSrc: dataCompressionPlatformImg, tone: 1 },
+    { label: "Knowledge & Workflow AI", imageSrc: knowledgeWorkflowImg, tone: 2 },
+    { label: "Product Development Platform", imageSrc: productDevelopmentPlatformImg, tone: 4 },
   ];
   const [index, setIndex] = useState(0);
 
@@ -91,10 +147,19 @@ function SeeTheResultsCarousel() {
                 key={slide.label}
                 className={`absolute inset-0 transition-opacity duration-700 ${i === index ? "opacity-100" : "opacity-0"}`}
               >
-                <div
-                  className="w-full h-full"
-                  style={{ background: VISUAL_GRADIENTS[slide.tone % VISUAL_GRADIENTS.length] }}
-                />
+                {slide.imageSrc ? (
+                  <img
+                    src={slide.imageSrc}
+                    alt={slide.label}
+                    className="w-full h-full object-cover object-center"
+                    loading="lazy"
+                  />
+                ) : (
+                  <div
+                    className="w-full h-full"
+                    style={{ background: VISUAL_GRADIENTS[slide.tone % VISUAL_GRADIENTS.length] }}
+                  />
+                )}
                 <div className="absolute bottom-4 right-4 bg-white/95 text-foreground text-[1rem] sm:text-[1.2rem] md:text-[1.35rem] px-5 py-2 rounded-full backdrop-blur-sm shadow-md border border-white/70">
                   <span className="text-gradient font-semibold">{slide.label}</span>
                 </div>
@@ -192,6 +257,8 @@ export default function Home() {
         subtitle="Powering the world's leading customer experiences"
         description="AI is rapidly transforming Contact Centers and its impact transcends both agents and consumers. As a leading reseller of Cresta's modern contact center solutions, we help Enterprises and Government deliver delight across the customer journey with greater speed, visibility, and consistency."
         panelTone={0}
+        visualImageSrc={contactCenterImg}
+        visualImageAlt="Contact center"
       />
 
       <ServiceSuiteSection
@@ -199,6 +266,8 @@ export default function Home() {
         subtitle="From Data Tokenization to Enterprise Scale"
         description="Data Storage is slated to increase 30% YoY with commensurate increases in infrastructure costs. As the primary reseller of Datasent's data compression and privacy solutions, we reduce workload costs while securely optimizing workflows, to keep pace with scale for Enterprise and Government environments."
         panelTone={1}
+        visualImageSrc={dataCompressionImg}
+        visualImageAlt="Data compression"
         reverse
       />
 
@@ -214,6 +283,8 @@ export default function Home() {
         subtitle="Propelling Businesses using Technology"
         description="Unlock innovation and spearhead new business opportunities by leveraging our expert advisory services and proven track record of revenue acceleration. We design and integrate custom product offerings that position Enterprises and Government for transformative growth."
         panelTone={4}
+        visualImageSrc={productDevelopmentImg}
+        visualImageAlt="Product development"
         reverse
       />
 
@@ -243,28 +314,82 @@ export default function Home() {
       <section className="py-14 md:py-20 section-soft">
         <div className="container mx-auto px-4 md:px-6">
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground text-center mb-10">Explore our services</h2>
-          <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-            {[
-              "Contact Center",
-              "Data Compression",
-              "Knowledge & Workflow AI",
-              "Product Development",
-              "System Integration",
-            ].map((service, idx) => (
-              <Link key={service} href="/get-in-touch">
+          <div className="max-w-6xl mx-auto lg:flex lg:items-stretch lg:gap-4">
+            {/* Left: 2/3 width, 2x2 grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-x-4 lg:gap-y-4 auto-rows-fr lg:w-2/3">
+              <Link href="/get-in-touch">
                 <a
-                  className="group block rounded-2xl p-6 min-h-[160px] text-white no-underline transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)]"
-                  style={{ backgroundColor: SERVICE_CARD_COLORS[idx] }}
+                  className="group block rounded-2xl p-6 min-h-[160px] lg:h-[160px] text-white no-underline transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)]"
+                  style={{ backgroundColor: SERVICE_CARD_COLORS[0] }}
                 >
                   <div className="h-full flex flex-col justify-between">
-                    <span className="font-heading font-bold text-lg leading-snug">{service}</span>
+                    <span className="font-heading font-bold text-lg leading-snug">Contact Center</span>
                     <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold">
                       Learn More <ArrowRight className="h-4 w-4" />
                     </span>
                   </div>
                 </a>
               </Link>
-            ))}
+
+              <Link href="/get-in-touch">
+                <a
+                  className="group block rounded-2xl p-6 min-h-[160px] lg:h-[160px] text-white no-underline transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)]"
+                  style={{ backgroundColor: SERVICE_CARD_COLORS[2] }}
+                >
+                  <div className="h-full flex flex-col justify-between">
+                    <span className="font-heading font-bold text-lg leading-snug">Knowledge &amp; Workflow AI</span>
+                    <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold">
+                      Learn More <ArrowRight className="h-4 w-4" />
+                    </span>
+                  </div>
+                </a>
+              </Link>
+
+              <Link href="/get-in-touch">
+                <a
+                  className="group block rounded-2xl p-6 min-h-[160px] lg:h-[160px] text-white no-underline transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)]"
+                  style={{ backgroundColor: SERVICE_CARD_COLORS[1] }}
+                >
+                  <div className="h-full flex flex-col justify-between">
+                    <span className="font-heading font-bold text-lg leading-snug">Data Compression</span>
+                    <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold">
+                      Learn More <ArrowRight className="h-4 w-4" />
+                    </span>
+                  </div>
+                </a>
+              </Link>
+
+              <Link href="/get-in-touch">
+                <a
+                  className="group block rounded-2xl p-6 min-h-[160px] lg:h-[160px] text-white no-underline transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)]"
+                  style={{ backgroundColor: SERVICE_CARD_COLORS[3] }}
+                >
+                  <div className="h-full flex flex-col justify-between">
+                    <span className="font-heading font-bold text-lg leading-snug">Product Development</span>
+                    <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold">
+                      Learn More <ArrowRight className="h-4 w-4" />
+                    </span>
+                  </div>
+                </a>
+              </Link>
+            </div>
+
+            {/* Right: 1/3 width, full height */}
+            <div className="mt-4 lg:mt-0 lg:w-1/3">
+              <Link href="/get-in-touch">
+                <a
+                  className="group block rounded-2xl p-6 min-h-[160px] lg:h-[336px] text-white no-underline transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)]"
+                  style={{ backgroundColor: SERVICE_CARD_COLORS[4] }}
+                >
+                  <div className="h-full flex flex-col justify-between">
+                    <span className="font-heading font-bold text-lg leading-snug">System Integration</span>
+                    <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold">
+                      Learn More <ArrowRight className="h-4 w-4" />
+                    </span>
+                  </div>
+                </a>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
