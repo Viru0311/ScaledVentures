@@ -73,7 +73,7 @@ export function Navbar() {
           <a className="flex items-center gap-2 group">
             <img
               src={logoNew}
-              alt="Scaled Ventures"
+              alt="Torinsoft"
               className="h-10 w-auto object-contain"
             />
           </a>

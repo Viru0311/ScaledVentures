@@ -19,12 +19,10 @@ export default function AboutUsPage() {
               </h1>
             </div>
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-              Our leadership team brings 70+ years of combined experience in scaling
-              emerging technologies and businesses. Scaled Ventures was founded to solve
-              a vexing problem in traffic safety enforcement – timely detection of
-              critical alerts so law enforcement can act and ensure safer communities.
-              We aim to leverage the power of Vision AI to become a leader in
-              intelligent advancement of public safety.
+              Our leadership team brings deep experience in scaling emerging technologies
+              and businesses. Torinsoft is focused on integrating Contact Center, Data
+              Management, Knowledge and Workflow AI, and Product Development to help
+              enterprises accelerate outcomes across high-growth industries.
             </p>
           </section>
 
@@ -37,18 +35,15 @@ export default function AboutUsPage() {
               <div className="h-1 w-16 rounded-full bg-primary mb-6" />
             </div>
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-              To become a global leader in Vision AI by transforming government,
-              securing critical infrastructure, improving operational efficiency, and
-              enabling intelligent decision making. We’re delivering an integrated
-              ecosystem of advanced AI, biometric services, and an ecosystem of edge
-              applications to unlock collaborative innovation.
+              To become a global system integration leader tailored toward enterprises
+              with Contact Center, Data Management, Knowledge and Workflow AI, and
+              Product Development. We focus on delivering accelerated outcomes for Tech,
+              AI Startups, Retailers, D2C, and Construction companies.
               <br />
               <br />
-              We aim to achieve this vision by combining our AI expertise, go to
-              market rollout, strategic acquisitions, and a track record of growth
-              acceleration, all while consolidating the entire AI technology and
-              services stack at the edge into a Vision AI decisioning and engagement
-              platform.
+              We aim to deliver this vision by combining our AI and industry expertise
+              to power C-suite and board initiatives that deliver accelerated growth and
+              unmatched differentiation.
             </p>
           </section>
 
@@ -61,15 +56,12 @@ export default function AboutUsPage() {
               <div className="h-1 w-16 rounded-full bg-primary mb-6" />
             </div>
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-              To secure and protect every neighborhood, transit, public area, and
-              critical infrastructure facilities, while improving law enforcement
-              officers&apos; safety and operational efficiency.
+              To transform enterprise market readiness by integrating AI, ML, Data
+              Strategy, and Workflow Automation.
               <br />
               <br />
-              We aim to unlock powerful data driven insights to create an environment
-              where every resident feels safe where they live, work, and play. We
-              seek to deliver personalized retail journeys that are welcoming and
-              tailored to customer needs.
+              We aim to unlock powerful data driven insights that pair innovation with
+              product and data strategy to capitalize on market growth.
             </p>
           </section>
 
@@ -102,7 +94,7 @@ export default function AboutUsPage() {
                 </div>
                 <div className="text-sm md:text-base text-muted-foreground leading-relaxed space-y-3">
                   <p>
-                    Kennedy Pereira is the Founder and Chief Executive Officer of Scaled Ventures.
+                    Kennedy Pereira is the Founder and Chief Executive Officer of Torinsoft.
                     Kennedy brings 25+ years of leadership experience across Silicon Valley,
                     Dallas and global technology markets. Over the course of his career, he
                     has launched and scaled startups from $0 to $10M, guided companies
@@ -110,10 +102,10 @@ export default function AboutUsPage() {
                     business unit to $1B+ in revenue.
                   </p>
                   <p>
-                    As Founder and CEO of Scaled Ventures, Kennedy&apos;s experience, insight, and
+                    As Founder and CEO of Torinsoft, Kennedy&apos;s experience, insight, and
                     network have led to rapidly operationalizing innovative Vision AI
                     platforms, building strong operating foundations, and successfully
-                    scaling Scaled Ventures into a market defining disruptor.
+                    scaling Torinsoft into a market defining disruptor.
                   </p>
                   <p>
                     Kennedy has held senior leadership roles across high growth and global
@@ -167,7 +159,7 @@ export default function AboutUsPage() {
                     security serving enterprise and government use cases across multiple
                     industries. Patrick applies his strategic insight, global network, and
                     execution discipline to build, scale, and ensure the long term success
-                    of Scaled Ventures.
+                    of Torinsoft.
                   </p>
                 </div>
               </article>

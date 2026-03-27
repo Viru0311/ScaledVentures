@@ -37,10 +37,10 @@ export default function GetInTouchPage() {
                 </p>
                 <p className="text-sm md:text-base text-muted-foreground">
                   <a
-                    href="mailto:info@scaledventures.com"
+                    href="mailto:info@scaledventures.ai"
                     className="text-primary hover:underline break-all"
                   >
-                    info@scaledventures.com
+                    info@scaledventures.ai
                   </a>
                 </p>
               </div>
@@ -57,10 +57,10 @@ export default function GetInTouchPage() {
                 </p>
                 <p className="text-sm md:text-base text-muted-foreground">
                   <a
-                    href="mailto:info@scaledventures.com"
+                    href="mailto:info@scaledventures.ai"
                     className="text-primary hover:underline break-all"
                   >
-                    info@scaledventures.com
+                    info@scaledventures.ai
                   </a>
                 </p>
               </div>
@@ -77,10 +77,10 @@ export default function GetInTouchPage() {
             </p>
             <p className="text-sm md:text-base text-muted-foreground">
               <a
-                href="mailto:info@scaledventures.com"
+                href="mailto:info@scaledventures.ai"
                 className="text-primary hover:underline break-all"
               >
-                info@scaledventures.com
+                info@scaledventures.ai
               </a>
             </p>
           </section>

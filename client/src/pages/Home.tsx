@@ -50,15 +50,17 @@ function ServiceSuiteSection({
     description: string;
   }) {
     return (
-      <div className="flex flex-col justify-center py-6 lg:py-0 lg:min-h-[360px] md:min-h-[320px] min-h-[280px]">
-        <span className="text-primary font-bold tracking-widest uppercase text-[1.05rem] mb-4 block">Product Suite</span>
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground mt-0 mb-4 leading-tight text-left -ml-[2px]">
-          {title}
-        </h2>
-        <p className="text-xl md:text-2xl font-medium text-foreground mb-6">{subtitle}</p>
-        <p className="text-base md:text-lg text-muted-foreground mb-8 leading-relaxed">{description}</p>
+      <div className="flex h-full flex-col py-4 md:py-6">
+        <div>
+          <span className="text-primary font-bold tracking-widest uppercase text-[1.05rem] mb-4 block">Product Suite</span>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground mt-0 mb-4 leading-tight text-left -ml-[2px]">
+            {title}
+          </h2>
+          <p className="text-xl md:text-2xl font-medium text-foreground mb-6">{subtitle}</p>
+          <p className="text-base md:text-lg text-muted-foreground leading-relaxed">{description}</p>
+        </div>
         <Link href="/get-in-touch">
-          <a className="link-underline inline-flex items-center gap-1 text-primary font-semibold">
+          <a className="link-underline inline-flex items-center gap-1 text-primary font-semibold mt-6">
             Learn More <span className="ml-1">-&gt;</span>
           </a>
         </Link>
@@ -78,12 +80,12 @@ function ServiceSuiteSection({
     visualImageAlt?: string;
   }) {
     return (
-      <div className="relative flex items-center justify-center h-[280px] md:h-[320px] lg:h-[360px]">
+      <div className="relative w-full self-start aspect-[4/3] rounded-2xl overflow-hidden">
         {visualImageSrc ? (
           <img
             src={visualImageSrc}
             alt={visualImageAlt ?? title}
-            className="w-full h-full object-contain object-center"
+            className="w-full h-full object-cover object-center"
             loading="lazy"
           />
         ) : (
@@ -93,7 +95,7 @@ function ServiceSuiteSection({
           />
         )}
 
-        <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
+        <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/45 via-black/20 to-black/5" />
 
         {!visualImageSrc ? (
           <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_top_right,_rgba(255,255,255,0.35),_transparent_55%)]" />
@@ -105,7 +107,7 @@ function ServiceSuiteSection({
   return (
     <section className="py-14 md:py-20 bg-background">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           {reverse ? (
             <>
               <VisualSide title={title} panelTone={panelTone} visualImageSrc={visualImageSrc} visualImageAlt={visualImageAlt} />
@@ -217,7 +219,7 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6 grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-10 lg:gap-12 items-center relative z-0 flex-1">
           <div className="z-10">
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold leading-[1.1] mb-6 tracking-tight">
-              <span className="text-gradient">Scaled Ventures</span>
+              <span className="text-gradient">Torinsoft</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-6 max-w-2xl leading-relaxed">
               We pair AI, Machine Learning, Product Development and System Integration to deliver intelligent

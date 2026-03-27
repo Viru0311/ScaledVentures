@@ -248,7 +248,7 @@ export default function ContactCenterPage() {
                       <p className="text-muted-foreground leading-relaxed">{section.description}</p>
                       <Link href="/calendar" className="inline-block mt-6">
                         <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-full">
-                          Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                          Get a demo <ArrowRight className="ml-2 h-4 w-4" />
                         </Button>
                       </Link>
                     </div>

@@ -49,7 +49,7 @@ export default function RetailPage() {
                   </div>
 
                   <p>
-                    At Scaled Ventures, we tackle this critical challenge by combining Vision
+                    At Torinsoft, we tackle this critical challenge by combining Vision
                     AI and shopper data sets along with precision ads tailored to real
                     time demographics. This approach attracts engagement, enables
                     transactions, and delivers delight in the moments that matter most.

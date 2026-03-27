@@ -88,7 +88,7 @@ export default function SoftwareDevelopmentPage() {
             </div>
             <Link href="/calendar" className="inline-block mt-6">
               <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-full">
-                Know More <ArrowRight className="ml-2 h-4 w-4" />
+                Talk to an Expert <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
           </div>

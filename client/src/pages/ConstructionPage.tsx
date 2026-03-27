@@ -9,13 +9,13 @@ import constructionFeature1Img from "@assets/product-development.png";
 import constructionFeature2Img from "@assets/contact-center-platform.png";
 
 const KEY_CHALLENGES = [
-  "Manual takeoff errors on critical project components lead to costly discrepancies.",
-  "Non-AI bidding workflows take weeks, causing firms to miss high-value projects.",
-  "Static pricing leaves bids exposed to sudden material cost volatility.",
-  "Poor project selection wastes bid effort on low-probability opportunities.",
-  "Margin erosion from intuition-based estimates and minor site delays.",
-  "Data silos keep historical insights trapped in disconnected spreadsheets.",
-  "Estimator burnout from repetitive manual math and data entry tasks.",
+  "Manual takeoff errors on critical project components frequently lead to multi-million dollar discrepancies.",
+  "Non-AI bidding workflows often take weeks to complete causing firms to miss high-value projects.",
+  "Static pricing risks leave bids vulnerable to sudden spikes in material costs because they lack the protection of real-time market data integration.",
+  "Poor project selection results in firms wasting thousands of dollars on bid-responses with a low statistical probability of winning.",
+  "Margin erosion occurs when inaccurate \"gut-feeling\" estimates create razor-thin profits that are easily erased by even minor site delays.",
+  "Data silos prevent valuable historical performance from informing future strategy, keeping critical insights trapped in disconnected, dead spreadsheets.",
+  "Estimator burnout results from wasting top-tier talent on tedious manual math and data entry instead of high-level project engineering.",
 ];
 
 export default function ConstructionPage() {
@@ -45,27 +45,21 @@ export default function ConstructionPage() {
 
         <section className="pt-10 md:pt-14 section-soft">
           <div className="container mx-auto px-4 md:px-6 max-w-6xl">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <h2 className="text-2xl md:text-3xl font-heading font-bold mb-4 text-foreground">Overview</h2>
+            <div className="h-1 w-16 rounded-full bg-primary mb-6" />
+            <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-10 lg:gap-14 items-stretch">
               <div>
-                <h2 className="text-2xl md:text-3xl font-heading font-bold mb-4 text-foreground">Overview</h2>
-                <div className="h-1 w-16 rounded-full bg-primary mb-6" />
                 <div className="space-y-4 text-base md:text-lg text-muted-foreground leading-relaxed">
                   <p>
-                    Commercial construction bid cycles are manually intensive and require coordination across multiple teams.
-                    When streamlined with automation, firms can reduce recursive workflows, bid rework, and departmental friction.
+                    Commercial construction bid cycles are manually intensive, requiring input from multiple teams. The current approach, when streamlined with automation will significantly reduce the impact from recursive workflows, bid-rework and departmental friction, thereby eliminating hidden costs, delays and overruns that risk project success before it even begins.
                   </p>
                   <p>
-                    At Scaled Ventures, our AI computer vision models perform rapid takeoffs through RFP OCR ingestion while
-                    predictive analytics supports real-time pricing intelligence.
-                  </p>
-                  <p>
-                    Instead of weeks of spreadsheet-heavy work, teams can automate project discovery and selection using
-                    historical performance data to scale bid volume with speed and precision.
+                    At Scaled Ventures, our AI computer vision model performs instant, accurate takeoffs (RFP data OCR ingestion) while predictive analytics provide real-time pricing. Instead of weeks of spreadsheet grinding, AI analyzes historical data to automate project discovery and selection. This replaces intuitive estimation with a data-driven strategy, allowing firms to scale their bid volume with incredible speed and precision.
                   </p>
                 </div>
               </div>
-              <div className="aspect-video rounded-xl overflow-hidden">
-                <img src={constructionFeature1Img} alt="Construction workflows" className="w-full h-full object-cover" />
+              <div className="relative min-h-[340px] md:min-h-[380px] lg:min-h-[420px] rounded-xl overflow-hidden">
+                <img src={constructionFeature1Img} alt="Construction workflows" className="absolute inset-0 w-full h-full object-cover" />
               </div>
             </div>
           </div>
@@ -75,28 +69,33 @@ export default function ConstructionPage() {
           <div className="container mx-auto px-4 md:px-6 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-heading font-bold mb-4 text-foreground">Key Challenges</h2>
             <div className="h-1 w-16 rounded-full bg-primary mb-8" />
-            <ul className="space-y-5 text-base md:text-lg text-muted-foreground leading-relaxed list-none">
-              {KEY_CHALLENGES.map((item) => (
-                <li key={item} className="flex gap-3 items-start">
-                  <span className="text-primary shrink-0 w-1.5 h-1.5 bg-current rounded-none mt-[0.6em]" aria-hidden />
-                  {item}
-                </li>
-              ))}
-            </ul>
+            <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-10 lg:gap-14 items-stretch">
+              <ul className="space-y-5 text-base md:text-lg text-muted-foreground leading-relaxed list-none">
+                {KEY_CHALLENGES.map((item) => (
+                  <li key={item} className="flex gap-3 items-start">
+                    <span className="text-primary shrink-0 w-1.5 h-1.5 bg-current rounded-none mt-[0.6em]" aria-hidden />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <div className="relative min-h-[340px] md:min-h-[380px] lg:min-h-[420px] rounded-xl overflow-hidden">
+                <img src={constructionFeature2Img} alt="Construction key challenges" className="absolute inset-0 w-full h-full object-cover" />
+              </div>
+            </div>
           </div>
         </section>
 
         <section className="pt-10 md:pt-14 pb-10 md:pb-14 section-soft">
           <div className="container mx-auto px-4 md:px-6 max-w-6xl">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-              <div className="order-2 lg:order-1 aspect-video rounded-xl overflow-hidden">
-                <img src={constructionFeature2Img} alt="AI-driven construction bidding" className="w-full h-full object-cover" />
+            <h2 className="text-2xl md:text-3xl font-heading font-bold mb-4 text-foreground">
+              Our Approach: Bidding Reimagined
+            </h2>
+            <div className="h-1 w-16 rounded-full bg-primary mb-6" />
+            <div className="grid grid-cols-1 lg:grid-cols-[0.85fr_1.15fr] gap-10 lg:gap-14 items-stretch">
+              <div className="order-2 lg:order-1 relative min-h-[340px] md:min-h-[380px] lg:min-h-[420px] rounded-xl overflow-hidden">
+                <img src={constructionFeature2Img} alt="AI-driven construction bidding" className="absolute inset-0 w-full h-full object-cover" />
               </div>
               <div className="order-1 lg:order-2">
-                <h2 className="text-2xl md:text-3xl font-heading font-bold mb-4 text-foreground">
-                  Our Approach: Bidding Reimagined
-                </h2>
-                <div className="h-1 w-16 rounded-full bg-primary mb-6" />
                 <div className="space-y-4 text-base md:text-lg text-muted-foreground leading-relaxed">
                   <p>
                     <strong className="text-foreground">Accuracy You Can Bank On:</strong> Computer vision reduces manual takeoff errors and replaces intuition-based estimates with validated pricing models to protect margins.
@@ -110,7 +109,7 @@ export default function ConstructionPage() {
                 </div>
                 <Link href="/calendar" className="inline-block mt-6">
                   <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-full">
-                    Know More <ArrowRight className="ml-2 h-4 w-4" />
+                    Talk to an Expert <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
               </div>

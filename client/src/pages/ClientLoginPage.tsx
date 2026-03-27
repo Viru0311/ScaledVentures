@@ -75,7 +75,7 @@ export default function ClientLoginPage() {
           >
             <div className="rounded-3xl bg-card/95 shadow-2xl border border-border/70 px-6 py-8 md:px-8 md:py-9">
               <div className="flex justify-center mb-4">
-                <img src={logoNew} alt="Scaled Ventures" className="h-10 w-auto" />
+                <img src={logoNew} alt="Torinsoft" className="h-10 w-auto" />
               </div>
               <h1 className="text-2xl md:text-3xl font-heading font-bold text-center mb-6">
                 Login
@@ -94,7 +94,7 @@ export default function ClientLoginPage() {
                     name="userId"
                     type="text"
                     className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm md:text-base outline-none focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:border-primary transition-shadow"
-                    placeholder="Scaled Ventures"
+                    placeholder="Torinsoft"
                     required
                   />
                 </div>
