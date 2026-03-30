@@ -94,7 +94,7 @@ export default function ClientLoginPage() {
                     name="userId"
                     type="text"
                     className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm md:text-base outline-none focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:border-primary transition-shadow"
-                    placeholder="Torinsoft"
+                    placeholder="torinosoft.ai"
                     required
                   />
                 </div>

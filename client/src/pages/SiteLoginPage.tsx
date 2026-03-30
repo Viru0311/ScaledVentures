@@ -3,7 +3,7 @@ import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import logoNew from "@assets/iolaire-logo.png";
 
-const STATIC_ID = "Torinsoft";
+const STATIC_ID = "torinosoft.ai";
 const STATIC_PASSWORD = "scaledventures";
 
 export default function SiteLoginPage() {
@@ -61,7 +61,7 @@ export default function SiteLoginPage() {
                     name="siteUserId"
                     type="text"
                     className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm md:text-base outline-none focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:border-primary transition-shadow"
-                    placeholder="Torinsoft"
+                    placeholder="torinosoft.ai"
                     value={userId}
                     onChange={(e) => setUserId(e.target.value)}
                     required
