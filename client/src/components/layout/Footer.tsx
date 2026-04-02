@@ -22,6 +22,13 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/product-development">
+                  <a className="text-primary hover:underline font-medium">
+                    Product Development
+                  </a>
+                </Link>
+              </li>
+              <li>
                 <Link href="/data-compression">
                   <a className="text-primary hover:underline font-medium">
                     Data Compression
@@ -32,13 +39,6 @@ export function Footer() {
                 <Link href="/knowledge-workflow-ai">
                   <a className="text-primary hover:underline font-medium">
                     Knowledge &amp; Workflow AI
-                  </a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/product-development">
-                  <a className="text-primary hover:underline font-medium">
-                    Product Development
                   </a>
                 </Link>
               </li>
@@ -58,6 +58,13 @@ export function Footer() {
                 </Link>
               </li>
               <li className="pl-4 text-muted-foreground">
+                <Link href="/blog/alpr">
+                  <a className="hover:text-primary transition-colors">
+                    &gt; Product Development
+                  </a>
+                </Link>
+              </li>
+              <li className="pl-4 text-muted-foreground">
                 <Link href="/alpr-resources">
                   <a className="hover:text-primary transition-colors">
                     &gt; Data Compression
@@ -68,13 +75,6 @@ export function Footer() {
                 <Link href="/blog/adtech">
                   <a className="hover:text-primary transition-colors">
                     &gt; Knowledge &amp; Workflow AI
-                  </a>
-                </Link>
-              </li>
-              <li className="pl-4 text-muted-foreground">
-                <Link href="/blog/alpr">
-                  <a className="hover:text-primary transition-colors">
-                    &gt; Product Development
                   </a>
                 </Link>
               </li>
@@ -101,11 +101,11 @@ export function Footer() {
 
           <div className="flex flex-col items-start md:items-end font-sans">
             <div className="flex items-center mb-4">
-              <div className="h-10 w-auto rounded-md bg-card flex items-center justify-center px-2 py-1">
+              <div className="h-[3.125rem] w-auto rounded-md bg-card flex items-center justify-center px-2 py-1">
                 <img
                   src={logoNew}
                   alt="Torinosoft"
-                  className="h-8 w-auto object-contain"
+                  className="h-10 w-auto object-contain"
                 />
               </div>
             </div>

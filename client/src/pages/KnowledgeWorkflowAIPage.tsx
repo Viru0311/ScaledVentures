@@ -32,16 +32,6 @@ const SLIDES = [
     accentClass: "bg-[#39827a]",
     image: kwAiPic3,
   },
-  {
-    id: "conversation-intelligence",
-    tag: "PRODUCTS",
-    name: "Conversation Intelligence",
-    description:
-      "Our pre-construction workflow utilizes advanced computer vision to automate quantity takeoffs and ensure total inventory precision. We integrate deep-learning algorithms to benchmark historical data against real-time market fluctuations, proactively flagging potential cost anomalies and hidden risks. This AI-facilitated audit provides a high-fidelity project profile, securing feasibility through systematic, evidence-based estimation.",
-    highlight: "computer vision",
-    accentClass: "bg-[#1f6fff]",
-    image: kwAiPic2,
-  },
 ];
 
 function KnowledgeWorkflowSlider() {
@@ -164,10 +154,8 @@ const ROI_TABLE_ROWS: { benefit: string; before: string; after: string; impact: 
   },
 ];
 
-const FEATURE_DEEP_DIVE_INTRO = [
-  "Our Conversation Intelligence engine turns every negotiation into a strategic asset by decoding intent and behavior beyond simple keywords. By identifying project risks and operational blockers across all channels, we empower your team to focus on high-value coaching and closing tactics. This data-driven approach streamlines your bidding pipeline, ensuring your human agents achieve better outcomes at a significantly lower operational cost.",
-  'Our Neural Takeoff Engine utilizes advanced computer vision to automate 2D and 3D material measurements with surgical precision in minutes. Historical Synthesis Pricing then benchmarks every new bid against your firm\'s past performance data to ensure guaranteed project profitability. Simultaneously, Linguistic Spec Auditing leverages NLP to scan thousands of pages of documentation and instantly flag hidden contract risks. To protect your margins from volatility, Live-Market Commodity Sync integrates real-time global supply chain pricing directly into your estimate. Our Dynamic Subcontractor Matchmaker identifies high-performing partners by analyzing their real-time capacity and past trade quality for the perfect fit. Finally, Scenario "What-If" Simulators run thousands of project variations to find the most strategic, high-margin construction path for every proposal.',
-];
+const FEATURE_DEEP_DIVE_INTRO =
+  "Our AI powered Takeoff Engine utilizes advanced computer vision to automate 2D material measurements with surgical precision in minutes. Simultaneously, we scan thousands of pages of documentation and instantly flag hidden contract risks. To protect your margins from volatility, we compare up-to-date pricing against a database of about 92,000 products thereby integrating real-time global supply chain pricing directly into your estimate. Finally, our model optimizes project variations to find the most strategic, high-margin construction path for every proposal.";
 
 export default function KnowledgeWorkflowAIPage() {
   return (
@@ -185,7 +173,7 @@ export default function KnowledgeWorkflowAIPage() {
                 <div className="space-y-3">
                   <h1 className="text-3xl md:text-5xl lg:text-6xl font-heading font-bold leading-tight">Knowledge and Workflow AI</h1>
                   <p className="text-sm md:text-base lg:text-lg leading-relaxed">
-                    AI-Powered Bidding. Human-Driven Excellence. Smarter estimates for a faster future.
+                    &ldquo;AI-Powered Bidding. Human-Driven Excellence. Smarter estimates for a faster future.&rdquo;
                   </p>
                 </div>
               </div>
@@ -226,7 +214,7 @@ export default function KnowledgeWorkflowAIPage() {
         <section className="pb-14 md:pb-20 bg-background">
           <div className="container mx-auto px-4 md:px-6 max-w-6xl">
             <h3 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-4">
-              The ROI of AI: Traditional vs. AI-Powered Bidding
+              The ROI of AI: Traditional vs AI-Powered Bidding
             </h3>
             <div className="h-1 w-16 rounded-full bg-primary mb-8" />
             <div className="overflow-x-auto rounded-2xl border border-primary/20 bg-[hsl(0,0%,98%)]">
@@ -267,16 +255,15 @@ export default function KnowledgeWorkflowAIPage() {
               <div className="p-8 md:p-12 lg:p-14 border-b border-primary/20 bg-[hsl(262,88%,96%)]">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-primary mb-4">Feature Deep Dive</h2>
                 <div className="h-1 w-20 rounded-full bg-primary mb-6" />
-                <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-6">{FEATURE_DEEP_DIVE_INTRO[0]}</p>
-                <p className="text-base md:text-lg text-muted-foreground leading-relaxed">{FEATURE_DEEP_DIVE_INTRO[1]}</p>
+                <p className="text-base md:text-lg text-muted-foreground leading-relaxed">{FEATURE_DEEP_DIVE_INTRO}</p>
               </div>
               <div className="p-8 md:p-12 lg:p-14 space-y-16 md:space-y-24 bg-[hsl(0,0%,96%)]">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
                   <div>
-                    <h3 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-4">AI Agents</h3>
+                    <h3 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-4">Knowledge AI</h3>
                     <div className="h-1 w-16 rounded-full bg-primary mb-6" />
                     <p className="text-muted-foreground leading-relaxed">
-                      Our platform doesn&apos;t just give you an AI calculator; it provides a fully autonomous agentic workforce. While traditional software requires constant human input, our agents proactively manage the &apos;bid-cycle&apos;—from the first plan download to the final subcontractor follow-up. They operate 24/7, making real-time adjustments as market prices shift and project documents evolve, so your human experts can focus on strategy instead of spreadsheets.
+                      Our platform doesn&apos;t just give you an AI calculator, it provides an automated bid response engine. The platform is integrated with up-to-date market pricing to ensure real-time adjustments as market prices shift and project documents evolve, so your human experts can focus on strategy instead of spreadsheets. While traditional bidding methods require significant human input, we automate the &apos;bid-cycle&apos;—from the first plan download to the final subcontractor follow-up, all infused with &ldquo;human-in-the-loop&rdquo; to ensure bid accuracy that maximizes win rates right out the gate.
                     </p>
                     <Link href="/calendar" className="inline-block mt-6">
                       <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-full">
@@ -285,16 +272,16 @@ export default function KnowledgeWorkflowAIPage() {
                     </Link>
                   </div>
                   <div className="aspect-video rounded-xl overflow-hidden">
-                    <img src={kwAiPic4} alt="AI Agents" className="w-full h-full object-cover" />
+                    <img src={kwAiPic4} alt="Knowledge AI" className="w-full h-full object-cover" />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
                   <div className="order-2 lg:order-2">
-                    <h3 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-4">Agent Assist</h3>
+                    <h3 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-4">Workflow Automation</h3>
                     <div className="h-1 w-16 rounded-full bg-primary mb-6" />
                     <p className="text-muted-foreground leading-relaxed">
-                      We believe the future of construction isn&apos;t just AI—it&apos;s the Augmented Estimator. Our &apos;Agent Assist&apos; model pairs the world&apos;s most powerful digital agents with seasoned human experts. While our AI handles the 2 a.m. plan revisions and pixel-perfect takeoffs, our human agents provide the strategic oversight, local nuance, and high-level negotiation that turn a standard bid into a guaranteed project win.
+                      Workflow automation in the construction industry has evolved beyond isolated tools into fully integrated, intelligent systems that manage the entire project lifecycle. This shift moves the focus from manually executing tasks to orchestrating complex, networked operations, all while significantly reducing the time to response. The core advantage is transforming human roles from reactive problem-solvers buried in administrative paperwork to strategic decision-makers focused on performance and quality.
                     </p>
                     <Link href="/calendar" className="inline-block mt-6">
                       <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-full">
@@ -303,7 +290,7 @@ export default function KnowledgeWorkflowAIPage() {
                     </Link>
                   </div>
                   <div className="order-1 lg:order-1 aspect-video rounded-xl overflow-hidden">
-                    <img src={kwAiPic5} alt="Agent Assist" className="w-full h-full object-cover" />
+                    <img src={kwAiPic5} alt="Workflow Automation" className="w-full h-full object-cover" />
                   </div>
                 </div>
               </div>

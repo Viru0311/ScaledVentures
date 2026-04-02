@@ -38,7 +38,7 @@ export default function SiteLoginPage() {
                 <img
                   src={logoNew}
                   alt="Torinosoft"
-                  className="h-10 w-auto"
+                  className="h-[3.125rem] w-auto object-contain"
                 />
               </div>
               <h1 className="text-2xl md:text-3xl font-heading font-bold text-center mb-2">

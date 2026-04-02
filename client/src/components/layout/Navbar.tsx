@@ -39,9 +39,9 @@ export function Navbar() {
       name: "SERVICES",
       options: [
         { label: "Contact Center", path: "/contact-center" },
+        { label: "Product Development", path: "/product-development" },
         { label: "Data Compression", path: "/data-compression" },
         { label: "Knowledge & Workflow AI", path: "/knowledge-workflow-ai" },
-        { label: "Product Development", path: "/product-development" },
       ],
     },
     { 
@@ -56,9 +56,9 @@ export function Navbar() {
       name: "RESOURCES", 
       options: [
         { label: "Contact Center", path: "/adtech-resources" },
+        { label: "Product Development", path: "/blog/alpr" },
         { label: "Data Compression", path: "/alpr-resources" },
-        { label: "Knowledge & Workflow AI", path: "/blog/adtech" },
-        { label: "Product Development", path: "/blog/alpr" }
+        { label: "Knowledge & Workflow AI", path: "/blog/adtech" }
       ]
     },
     { 
@@ -86,7 +86,7 @@ export function Navbar() {
             <img
               src={logoNew}
               alt="Torinosoft"
-              className="h-10 w-auto object-contain"
+              className="h-[3.125rem] w-auto object-contain"
             />
           </a>
         </Link>

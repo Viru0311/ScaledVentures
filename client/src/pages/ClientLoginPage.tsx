@@ -75,7 +75,7 @@ export default function ClientLoginPage() {
           >
             <div className="rounded-3xl bg-card/95 shadow-2xl border border-border/70 px-6 py-8 md:px-8 md:py-9">
               <div className="flex justify-center mb-4">
-                <img src={logoNew} alt="Torinosoft" className="h-10 w-auto" />
+                <img src={logoNew} alt="Torinosoft" className="h-[3.125rem] w-auto object-contain" />
               </div>
               <h1 className="text-2xl md:text-3xl font-heading font-bold text-center mb-6">
                 Login

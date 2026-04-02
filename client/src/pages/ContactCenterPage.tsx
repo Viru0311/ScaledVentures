@@ -36,7 +36,7 @@ const CONTACT_CENTER_SLIDES = [
     tag: "Products",
     name: "Conversation Intelligence",
     description:
-      "Conversation Intelligence uncovers signals within every conversation and captures the voice of the customer at scale. It turns insights into stronger business outcomes through natural language analysis, AI driven quality management, and outcome focused coaching.",
+      "Our Conversation Intelligence uncovers signals within every conversation and captures the voice of the customer at scale. It turns insights into stronger business outcomes through natural language analysis, AI driven quality management, and outcome focused coaching.",
     highlight: "stronger business outcomes",
     accentClass: "bg-[#1f6fff]",
     image: contactCenterFeature3Img,
@@ -136,11 +136,10 @@ export default function ContactCenterPage() {
 
         <section className="pt-14 md:pt-20 pb-0 section-soft">
           <div className="container mx-auto px-4 md:px-6 max-w-4xl">
-            <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-6">
-              Transform conversations and workflows through a unified platform purpose built for the contact center.
-            </p>
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
               Our Contact Center platform combines AI Agents, Agent Assist, and Conversation Intelligence to improve how customer interactions are managed across channels.
+              Together, these capabilities enable natural conversations, real-time agent support, and deeper operational insight, helping organizations improve service quality,
+              reduce handle time, strengthen coaching, and drive more consistent business outcomes.
             </p>
           </div>
         </section>
@@ -190,7 +189,7 @@ export default function ContactCenterPage() {
                 </thead>
                 <tbody className="text-muted-foreground">
                   <tr className="border-t border-border/70"><td className="px-4 py-3">Aviation</td><td className="px-4 py-3">Care & efficiency</td><td className="px-4 py-3">8,900 agents</td><td className="px-4 py-3">15% lower average handle time</td></tr>
-                  <tr className="border-t border-border/70"><td className="px-4 py-3">Home Security</td><td className="px-4 py-3">Care, Sales, Retention</td><td className="px-4 py-3">600 agents</td><td className="px-4 py-3">30 pt increase in NPS</td></tr>
+                  <tr className="border-t border-border/70"><td className="px-4 py-3">Home Security</td><td className="px-4 py-3">Care. Sales. Retention</td><td className="px-4 py-3">600 agents</td><td className="px-4 py-3">30 pt increase in NPS</td></tr>
                   <tr className="border-t border-border/70"><td className="px-4 py-3">Banking</td><td className="px-4 py-3">Collections</td><td className="px-4 py-3">600 agents</td><td className="px-4 py-3">11% higher promise-to-pay</td></tr>
                   <tr className="border-t border-border/70"><td className="px-4 py-3">Telecommunications</td><td className="px-4 py-3">Sales</td><td className="px-4 py-3">3,400 agents</td><td className="px-4 py-3">50% higher sales conversion</td></tr>
                   <tr className="border-t border-border/70"><td className="px-4 py-3">Consumer Finance</td><td className="px-4 py-3">Care & efficiency</td><td className="px-4 py-3">600 agents</td><td className="px-4 py-3">40% lower average handle time</td></tr>
@@ -215,6 +214,8 @@ export default function ContactCenterPage() {
                 <div className="h-1 w-20 rounded-full bg-primary mb-6" />
                 <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
                   Our Contact Center platform combines AI Agents, Agent Assist, and Conversation Intelligence to improve how customer interactions are managed across channels.
+                  Together, these capabilities enable natural conversations, real-time agent support, and deeper operational insight, helping organizations improve service quality,
+                  reduce handle time, strengthen coaching, and drive more consistent business outcomes.
                 </p>
               </div>
               <div className="p-8 md:p-12 lg:p-14 space-y-16 md:space-y-24 bg-[hsl(0,0%,96%)]">
@@ -223,21 +224,21 @@ export default function ContactCenterPage() {
                     title: "AI Agents",
                     image: contactCenterFeature1Img,
                     description:
-                      "Delight customers with human like conversations through AI agents designed to sound natural and stay aligned with your brand. Deep conversational insights help identify what to automate and reveal behaviors that drive stronger outcomes.",
+                      "Delight customers with human like conversations through AI agents designed to sound natural and stay aligned with your brand. Optimized for the unique demands of each channel, the agents context and transition seamlessly across interactions to resolve issues more effectively. Deep conversational insights help identify what to automate and reveal the behaviors that drive stronger outcomes.",
                     reverse: false,
                   },
                   {
                     title: "Agent Assist",
                     image: contactCenterFeature2Img,
                     description:
-                      "Empower agents with real-time guidance and conversation specific workflows that improve confidence and speed from day one. Customizable AI summaries reduce handle time while support for chat and email improves efficiency.",
+                      "Empower agents with real-time guidance and conversation specific workflows that improve confidence and speed from day one. We also combine live interaction signals with on screen context to deliver precise answers instantly. Customizable AI summaries reduce handle time, while AI support for chat and email continues to improve efficiency by reducing manual typing and applying insights learned from top performing agents.",
                     reverse: true,
                   },
                   {
                     title: "Conversation Intelligence",
                     image: contactCenterFeature3Img,
                     description:
-                      "Turn customer conversations into better business decisions with AI powered insights that reveal context, behavior, and outcomes beyond simple keyword tracking.",
+                      "Turn customer conversations into better business decisions with AI powered insights that reveal context, behavior, and outcomes beyond simple keyword tracking. We analyze conversations across channels to identify what drives results, helping teams focus more on coaching agents, removing operational blockers, and improving performance at lower cost.",
                     reverse: false,
                   },
                 ].map((section) => (
