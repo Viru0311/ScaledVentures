@@ -282,11 +282,11 @@ export default function ServiceArchitecturePage() {
           <div className="container mx-auto px-4 md:px-6">
             <div className="max-w-3xl mx-auto text-center rounded-3xl border border-primary/20 bg-primary/5 p-8 md:p-10">
               <h2 className="text-2xl md:text-3xl font-heading font-bold mb-4">
-                Ready to explore the architecture in depth?
+                Ready to explore our services architecture in depth?
               </h2>
               <p className="text-base md:text-lg text-muted-foreground mb-6">
-                Schedule time with our team to walk through deployment models, integrations, and
-                how the platform can be tailored to your environment.
+                Schedule time with our team to walk through deployment models, integrations, and how our tailored
+                solutions align with your goals and demonstrate measurable impact.
               </p>
               <div className="flex justify-center">
                 <Link href="/calendar">
