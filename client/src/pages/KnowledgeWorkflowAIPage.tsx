@@ -47,13 +47,13 @@ function KnowledgeWorkflowSlider() {
     <section className="relative pt-14 md:pt-20 pb-14 md:pb-20 bg-background overflow-hidden" data-section="products">
       <div className="relative w-full max-w-6xl mx-auto px-4 md:px-6">
         <div className="relative rounded-3xl bg-[#020617] text-white overflow-hidden shadow-2xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 lg:gap-20 p-6 md:p-10 lg:p-12 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-12 p-4 md:p-6 lg:p-8 items-center">
             <div className="relative h-full">
-              <div className="relative h-[220px] md:h-[260px] lg:h-[300px] rounded-xl overflow-hidden bg-foreground/10">
+              <div className="relative h-[260px] md:h-[310px] lg:h-[360px] rounded-xl overflow-hidden bg-foreground/10">
                 <img src={slide.image} alt={slide.name} className="w-full h-full object-cover object-center" />
               </div>
             </div>
-            <div className="space-y-5 md:space-y-6 max-w-sm md:max-w-md">
+            <div className="space-y-4 md:space-y-5 max-w-md md:max-w-lg">
               <div className="flex flex-wrap items-center gap-3">
                 <span className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">{slide.tag}</span>
                 <span
@@ -62,7 +62,7 @@ function KnowledgeWorkflowSlider() {
                   {slide.name}
                 </span>
               </div>
-              <p className="text-sm md:text-base text-white/80 leading-relaxed">
+              <p className="text-base md:text-lg text-white/80 leading-relaxed">
                 {slide.description.split(slide.highlight).map((part, i, parts) => (
                   <span key={i}>
                     {part}
@@ -73,7 +73,7 @@ function KnowledgeWorkflowSlider() {
             </div>
           </div>
 
-          <div className="hidden md:flex absolute inset-x-0 bottom-4 justify-end px-6 md:px-10">
+          <div className="hidden md:flex absolute inset-x-0 bottom-3 justify-end px-4 md:px-6">
             <div className="inline-flex items-center gap-2 rounded-full bg-white/5 backdrop-blur-sm p-1 shadow-lg shadow-black/40">
               <button
                 type="button"
@@ -81,7 +81,7 @@ function KnowledgeWorkflowSlider() {
                 className="flex h-9 w-9 items-center justify-center rounded-full bg-[#111827] text-white hover:bg-[#1f2937] transition-colors"
                 aria-label="Previous section"
               >
-                <ArrowLeft className="w-4 w-4" />
+                <ArrowLeft className="w-4 h-4" />
               </button>
               <button
                 type="button"
