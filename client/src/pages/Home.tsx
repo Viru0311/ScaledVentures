@@ -37,7 +37,13 @@ const ONE_PARTNER_TRANSITION = {
   ease: [0.22, 1, 0.36, 1] as const,
 };
 
-function OnePartnerRotatingTaglines() {
+function OnePartnerRotatingTaglines({
+  compact = false,
+  align = "center",
+}: {
+  compact?: boolean;
+  align?: "center" | "left";
+}) {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
@@ -47,17 +53,21 @@ function OnePartnerRotatingTaglines() {
     return () => window.clearInterval(id);
   }, []);
 
+  const isLeft = align === "left";
+
   return (
     <div
-      className="text-lg md:text-xl text-primary font-bold mb-3 md:mb-4 text-pretty px-2"
+      className={`text-lg md:text-xl text-primary font-bold text-pretty ${compact ? "mb-2 md:mb-3" : "mb-3 md:mb-4"} ${isLeft ? "px-0" : "px-2"}`}
       aria-live="polite"
       aria-atomic="true"
     >
-      <div className="relative mx-auto flex min-h-[3.75rem] md:min-h-[4.25rem] w-full max-w-3xl items-center justify-center overflow-hidden">
+      <div
+        className={`relative flex w-full max-w-3xl overflow-hidden ${isLeft ? "mx-0 justify-start" : "mx-auto justify-center"} ${compact ? "min-h-[3rem] md:min-h-[3.5rem]" : "min-h-[3.75rem] md:min-h-[4.25rem]"} items-center`}
+      >
         <AnimatePresence mode="wait" initial={false}>
           <motion.p
             key={index}
-            className="text-center w-full"
+            className={`w-full ${isLeft ? "text-left" : "text-center"}`}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
@@ -280,41 +290,57 @@ export default function Home() {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden font-sans selection:bg-primary/30">
       <Navbar />
 
-      <section className="relative min-h-screen flex flex-col justify-center pt-24 md:pt-28 pb-14 md:pb-20 overflow-hidden hero-pattern">
+      <section className="relative flex min-h-screen flex-col justify-start pt-20 md:pt-24 pb-8 md:pb-10 lg:min-h-[100dvh] lg:pb-8 overflow-hidden hero-pattern">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-primary/15 rounded-full blur-[140px] -z-10 opacity-60" />
         <div className="absolute top-1/4 right-0 w-[500px] h-[400px] bg-primary/10 rounded-full blur-[100px] -z-10 opacity-40" />
-        <div className="container mx-auto px-4 md:px-6 grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-10 lg:gap-12 items-center relative z-0 flex-1">
-          <div className="z-10">
-            <h1 className="text-5xl md:text-7xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-heading font-bold leading-[1.1] mb-6 tracking-tight">
-              <span className="text-black">Product</span>{" "}
-              <span className="text-gradient">Foundry</span>
-            </h1>
-            <p className="text-lg md:text-xl text-muted-foreground mb-6 max-w-2xl leading-relaxed">
-              We pair AI, Machine Learning, Product Development and System Integration to deliver intelligent
-              technology solutions that help Enterprises and Government innovate, improve efficiency, manage
-              complexity, and accelerate growth.
-            </p>
-            <div className="text-base md:text-lg text-foreground mb-8 max-w-2xl">
-              <span className="font-semibold block mb-3">Our offerings</span>
-              <div className="grid grid-cols-2 gap-x-6 sm:gap-x-10 md:gap-x-14 gap-y-2.5 text-left">
-                <span className="min-w-0">Contact Center</span>
-                <span className="min-w-0">Product Development</span>
-                <span className="min-w-0">Data Compression</span>
-                <span className="min-w-0">Knowledge &amp; Workflow AI</span>
+        <div className="container mx-auto px-4 md:px-6 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 lg:items-stretch items-start relative z-0 flex-1">
+          <div className="z-10 flex min-h-0 flex-col gap-5 md:gap-6 lg:h-full lg:max-w-none lg:justify-between">
+            <div className="space-y-3 md:space-y-4">
+              <h1 className="text-5xl md:text-7xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-heading font-bold leading-[1.1] tracking-tight">
+                <span className="text-black">Product</span>{" "}
+                <span className="text-gradient">Foundry</span>
+              </h1>
+              <p className="text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
+                We pair AI, Machine Learning, Product Development and System Integration to deliver intelligent
+                technology solutions that help Enterprises and Government innovate, improve efficiency, manage
+                complexity, and accelerate growth.
+              </p>
+              <div className="text-base md:text-lg text-foreground max-w-2xl">
+                <span className="font-semibold mb-2 block">Our offerings</span>
+                <div className="grid grid-cols-2 gap-x-6 sm:gap-x-8 md:gap-x-10 gap-y-2 text-left">
+                  <span className="min-w-0">Contact Center</span>
+                  <span className="min-w-0">Product Development</span>
+                  <span className="min-w-0">Data Compression</span>
+                  <span className="min-w-0">Knowledge &amp; Workflow AI</span>
+                </div>
+              </div>
+              <div className="pt-0.5">
+                <Link href="/get-in-touch">
+                  <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-full h-14 px-10 text-lg shadow-lg shadow-primary/20">
+                    Contact Us <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </Link>
               </div>
             </div>
-            <Link href="/get-in-touch">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-full h-14 px-10 text-lg shadow-lg shadow-primary/20">
-                Contact Us <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </Link>
+
+            <div className="text-left">
+              <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-2 leading-tight">
+                One Partner
+              </h2>
+              <OnePartnerRotatingTaglines compact align="left" />
+              <Link href="/service-architecture">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-full h-14 px-10 text-lg shadow-lg shadow-primary/20">
+                  Explore Service Architecture <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
+            </div>
           </div>
-          <div className="relative w-full lg:max-w-none mx-auto aspect-[7.9/4.9]">
-            <div className="relative w-full h-full rounded-2xl overflow-hidden lg:scale-[1.05] lg:origin-center">
+          <div className="relative mx-auto aspect-[7.9/4.9] w-full min-h-0 max-w-full lg:mx-0">
+            <div className="relative h-full w-full overflow-hidden rounded-2xl">
               <img
                 src={torinosoftHeroImg}
                 alt="Smart city skyline with digital data visualization overlay"
-                className="w-full h-full object-cover object-center"
+                className="h-full w-full object-cover object-center"
               />
             </div>
           </div>
@@ -360,22 +386,6 @@ export default function Home() {
         learnMoreHref="/knowledge-workflow-ai"
         reverse
       />
-
-      <section className="py-10 md:py-14 section-soft">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground mb-2 md:mb-3 leading-tight">
-              One Partner
-            </h2>
-            <OnePartnerRotatingTaglines />
-            <Link href="/service-architecture">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-full px-8">
-                Explore Service Architecture <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
 
       <SeeTheResultsCarousel />
 
