@@ -290,12 +290,12 @@ export default function Home() {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden font-sans selection:bg-primary/30">
       <Navbar />
 
-      <section className="relative flex min-h-screen flex-col justify-start pt-20 md:pt-24 pb-8 md:pb-10 lg:min-h-[100dvh] lg:pb-8 overflow-hidden hero-pattern">
+      {/* lg+: flex row — row height follows left column; right image stretches to match (ends with CTA), not viewport */}
+      <section className="relative flex min-h-screen flex-col justify-start overflow-hidden pt-20 md:pt-24 pb-8 md:pb-10 hero-pattern">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-primary/15 rounded-full blur-[140px] -z-10 opacity-60" />
         <div className="absolute top-1/4 right-0 w-[500px] h-[400px] bg-primary/10 rounded-full blur-[100px] -z-10 opacity-40" />
-        <div className="container relative z-0 mx-auto grid flex-1 grid-cols-1 items-start gap-8 px-4 md:px-6 lg:grid-cols-2 lg:items-start lg:gap-10">
-          {/* Single hero copy stack: no justify-between / h-full — avoids One Partner drifting down when the window grows */}
-          <div className="z-10 min-w-0 max-w-none space-y-5 text-left md:space-y-6 lg:self-start">
+        <div className="container relative z-0 mx-auto flex w-full min-w-0 flex-col gap-8 px-4 md:px-6 lg:flex-row lg:items-stretch lg:gap-10">
+          <div className="z-10 min-w-0 max-w-none flex-1 space-y-5 text-left md:space-y-6">
             <div className="space-y-3 md:space-y-4">
               <h1 className="text-5xl md:text-7xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-heading font-bold leading-[1.1] tracking-tight">
                 <span className="text-black">Product</span>{" "}
@@ -329,12 +329,12 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div className="relative mx-auto aspect-[7.9/4.9] w-full min-h-0 max-w-full lg:mx-0">
-            <div className="relative h-full w-full overflow-hidden rounded-2xl">
+          <div className="relative mx-auto aspect-[7.9/4.9] w-full min-h-0 max-w-full lg:mx-0 lg:aspect-auto lg:flex lg:min-h-0 lg:min-w-0 lg:flex-1 lg:flex-col">
+            <div className="relative h-full min-h-[220px] w-full flex-1 overflow-hidden rounded-2xl lg:min-h-0">
               <img
                 src={torinosoftHeroImg}
                 alt="Smart city skyline with digital data visualization overlay"
-                className="h-full w-full object-cover object-top"
+                className="h-full w-full object-cover object-top lg:absolute lg:inset-0 lg:h-full lg:w-full"
               />
             </div>
           </div>

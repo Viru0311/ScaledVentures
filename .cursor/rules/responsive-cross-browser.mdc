@@ -1,0 +1,36 @@
+---
+description: Preserve responsive layout and cross-browser behavior on all UI changes
+alwaysApply: true
+---
+
+# Cross-device and cross-browser
+
+When changing UI, layout, navigation, overlays, or viewport-related code, **keep these patterns intact** unless the task explicitly replaces them.
+
+## Viewport and safe areas
+
+- Do not remove `viewport-fit=cover` from `client/index.html` (needed for `env(safe-area-inset-*)` on notched devices).
+- Fixed UI (navbar, cookie banner, bottom sheets) should respect safe areas: use `env(safe-area-inset-top,0px)`, `env(safe-area-inset-bottom,0px)`, or Tailwind arbitrary values like `bottom-[max(1rem,env(safe-area-inset-bottom,0px))]` where appropriate.
+- Full-height panels (e.g. mobile nav dropdown) should account for safe-area in `max-height` / `calc()` so content is not clipped under notches or home indicators.
+
+## Touch, hover, and scrolling
+
+- Prefer `usePrefersHoverNav()` for nav: hover cards on fine pointer + hover; dropdowns on touch / coarse pointer.
+- When the mobile/tablet nav menu is open, keep **body scroll locked** (`overflow: hidden` on `document.body`) and restore the previous value on close.
+- Keep touch targets at least ~44px where users tap primary actions.
+
+## Media queries
+
+- Use `subscribeMediaQuery` from `client/src/lib/mediaQuery.ts` for `MediaQueryList` listeners so **older Safari** (`addListener` / `removeListener`) still works. Do not rely only on `addEventListener` on `MediaQueryList` without this helper.
+
+## Content width and overflow
+
+- Avoid horizontal page scroll: prefer `min-w-0`, `overflow-x-hidden` on page shells where already used, and `overflow-x-auto` for wide tables or code blocks.
+
+## PDF viewer (`WhitepaperPdfViewer`)
+
+- Keep responsive width via container + `ResizeObserver`; keep disabling the text layer on narrow viewports if performance-sensitive; keep inline error fallback with open/download actions.
+
+## New features
+
+- New fixed or full-screen components should follow the same safe-area and scroll-lock patterns as existing ones.

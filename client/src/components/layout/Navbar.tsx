@@ -34,6 +34,15 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = prev;
+    };
+  }, [mobileMenuOpen]);
+
   const navItems = [
     {
       name: "SERVICES",
@@ -74,7 +83,7 @@ export function Navbar() {
   return (
     <nav
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b font-[Roboto,sans-serif]",
+        "fixed top-0 left-0 right-0 z-50 pt-[env(safe-area-inset-top,0px)] transition-all duration-300 border-b font-[Roboto,sans-serif]",
         isScrolled
           ? "bg-background/98 backdrop-blur-md border-border/80 shadow-sm"
           : "bg-transparent border-transparent"
@@ -168,7 +177,7 @@ export function Navbar() {
 
       {/* Mobile/Tablet Menu */}
       {mobileMenuOpen && (
-        <div className="xl:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-xl border-b border-border p-4 flex flex-col gap-4 animate-in slide-in-from-top-5 max-h-[calc(100vh-4rem)] overflow-y-auto supports-[height:100dvh]:max-h-[calc(100dvh-4rem)]">
+        <div className="xl:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-xl border-b border-border p-4 flex flex-col gap-4 animate-in slide-in-from-top-5 max-h-[calc(100vh-4rem-env(safe-area-inset-top,0px))] overflow-y-auto supports-[height:100dvh]:max-h-[calc(100dvh-4rem-env(safe-area-inset-top,0px))]">
           {navItems.map((item) => (
             <div key={item.name} className="flex flex-col gap-1.5">
               <span className="text-xs font-bold text-muted-foreground uppercase tracking-[0.18em] px-2">{item.name}</span>

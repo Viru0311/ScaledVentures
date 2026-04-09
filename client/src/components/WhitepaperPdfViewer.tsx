@@ -5,6 +5,7 @@ import pdfWorkerUrl from "pdfjs-dist/build/pdf.worker.min.mjs?url";
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import "react-pdf/dist/Page/TextLayer.css";
 import { Button } from "@/components/ui/button";
+import { subscribeMediaQuery } from "@/lib/mediaQuery";
 import { ExternalLink, Loader2 } from "lucide-react";
 
 pdfjs.GlobalWorkerOptions.workerSrc = pdfWorkerUrl;
@@ -30,8 +31,7 @@ export function WhitepaperPdfViewer({ file }: WhitepaperPdfViewerProps) {
     const mq = window.matchMedia("(max-width: 768px)");
     const syncNarrow = () => setNarrow(mq.matches);
     syncNarrow();
-    mq.addEventListener("change", syncNarrow);
-    return () => mq.removeEventListener("change", syncNarrow);
+    return subscribeMediaQuery(mq, syncNarrow);
   }, []);
 
   useEffect(() => {

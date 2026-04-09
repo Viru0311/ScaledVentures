@@ -1,4 +1,5 @@
 import { useLayoutEffect, useState } from "react";
+import { subscribeMediaQuery } from "@/lib/mediaQuery";
 
 const HOVER_FINE_QUERY = "(hover: hover) and (pointer: fine)";
 
@@ -13,8 +14,7 @@ export function usePrefersHoverNav(): boolean {
     const mq = window.matchMedia(HOVER_FINE_QUERY);
     const sync = () => setPrefersHover(mq.matches);
     sync();
-    mq.addEventListener("change", sync);
-    return () => mq.removeEventListener("change", sync);
+    return subscribeMediaQuery(mq, sync);
   }, []);
 
   return prefersHover;

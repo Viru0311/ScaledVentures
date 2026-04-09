@@ -3,7 +3,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { Building2, Database, Code2 } from "lucide-react";
+import { Building2, Database, Code2, Headset } from "lucide-react";
 
 export default function ServiceArchitecturePage() {
   return (
@@ -167,7 +167,7 @@ export default function ServiceArchitecturePage() {
           </div>
         </section>
 
-        {/* Flexible services — three industry solutions */}
+        {/* Flexible services — industry solutions */}
         <section className="py-14 md:py-20 section-soft border-y border-border/60">
           <div className="container mx-auto px-4 md:px-6">
             <motion.div
@@ -187,7 +187,7 @@ export default function ServiceArchitecturePage() {
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 lg:gap-10">
               <motion.div
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -265,6 +265,42 @@ export default function ServiceArchitecturePage() {
                   your technical objectives and drives maximum operational impact.
                 </p>
                 <Link href="/software-development">
+                  <Button variant="outline" size="sm" className="self-start rounded-full">
+                    Explore Further
+                  </Button>
+                </Link>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.4, delay: 0.09 }}
+                className="rounded-2xl border border-border/60 bg-card/80 backdrop-blur-sm p-6 md:p-7 flex flex-col min-w-0"
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                    <Headset className="h-5 w-5 text-primary" />
+                  </div>
+                  <h3 className="text-lg md:text-xl font-heading font-semibold">Contact Center</h3>
+                </div>
+                <div className="text-sm md:text-base text-muted-foreground leading-relaxed mb-6 flex-1 space-y-3 min-w-0">
+                  <p>
+                    Our AI-native solutions leverage cutting-edge models to deliver unmatched accuracy, quality, and
+                    real-time performance for the world&apos;s largest contact centers.
+                  </p>
+                  <p>
+                    For Customer Experience and Contact Center leaders driving AI transformation, we enable automation
+                    of routine tasks while empowering teams with Knowledge AI and Agent Assist to streamline customer
+                    care.
+                  </p>
+                  <p>
+                    Built for real-time, enterprise-scale deployments with near-zero latency, our solutions integrate
+                    seamlessly with your existing systems, unlocking immediate value and maximizing transformation
+                    impact.
+                  </p>
+                </div>
+                <Link href="/contact-center">
                   <Button variant="outline" size="sm" className="self-start rounded-full">
                     Explore Further
                   </Button>

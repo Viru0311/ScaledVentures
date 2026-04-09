@@ -222,7 +222,7 @@ export function CookieConsent() {
 
   return (
     <>
-      <div className="fixed inset-x-0 bottom-4 z-40 flex justify-center px-4 pointer-events-none">
+      <div className="fixed inset-x-0 z-40 flex justify-center px-4 pointer-events-none bottom-[max(1rem,env(safe-area-inset-bottom,0px))]">
         <div className="pointer-events-auto w-full max-w-3xl rounded-2xl bg-card shadow-xl border border-border/80 px-5 py-4 md:px-6 md:py-4 flex flex-col md:flex-row md:items-center gap-3">
           <div className="flex-1">
             <p className="text-sm md:text-base font-medium text-foreground">
